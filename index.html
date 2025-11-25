@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Injamamul Haque – Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Personal website of Injamamul Haque – tech enthusiast, independent journalist, and content creator from Assam, India."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      /* Light, soft palette */
+      --bg: #f7f5ff;
+      --bg-alt: #fdfbff;
+      --card: #ffffff;
+      --accent: #7b61ff;
+      --accent-soft: rgba(123, 97, 255, 0.08);
+      --accent-soft-2: rgba(255, 190, 152, 0.2);
+      --text-main: #201b3a;
+      --text-muted: #7a7296;
+      --border-subtle: #e0d7ff;
+      --danger: #ff4b81;
+      --shadow-soft: 0 18px 40px rgba(29, 15, 89, 0.12);
+      --radius-lg: 18px;
+      --radius-xl: 26px;
+      --max-width: 1040px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #f0ecff 0, #fdfbff 40%, #f7f5ff 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(
+        to bottom,
+        rgba(253, 251, 255, 0.96),
+        rgba(253, 251, 255, 0.86),
+        rgba(253, 251, 255, 0)
+      );
+      border-bottom: 1px solid rgba(224, 215, 255, 0.9);
+    }
+
+    .nav {
+      margin: 0 auto;
+      max-width: var(--max-width);
+      padding: 14px 18px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-size: 0.86rem;
+      color: #34255f;
+    }
+
+    .logo-mark {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      border: 1px solid rgba(123, 97, 255, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 30% 0, #f4ecff 0, #c4b5ff 55%);
+      box-shadow: 0 0 18px rgba(123, 97, 255, 0.5);
+      font-size: 0.7rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      position: relative;
+      color: var(--text-muted);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), #ffb9c6);
+      transition: width 0.18s ease-out;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-main);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      font-size: 0.86rem;
+      border-radius: 999px;
+      padding: 7px 14px;
+      border: 1px solid rgba(123, 97, 255, 0.5);
+      background: linear-gradient(135deg, #fff9f2, #f3ecff);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease,
+        border-color 0.18s ease;
+      box-shadow: 0 0 0 rgba(123, 97, 255, 0.1);
+      color: #34255f;
+    }
+
+    .nav-cta span {
+      font-size: 1rem;
+      transform: translateY(0.5px);
+      color: #ff7a9e;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 0 20px rgba(123, 97, 255, 0.4);
+      border-color: var(--accent);
+    }
+
+    main {
+      flex: 1;
+      margin: 0 auto;
+      max-width: var(--max-width);
+      padding: 30px 18px 60px;
+    }
+
+    section {
+      margin-bottom: 70px;
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 34px;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 11px;
+      border-radius: 999px;
+      border: 1px solid rgba(123, 97, 255, 0.35);
+      background: rgba(243, 238, 255, 0.9);
+      font-size: 0.78rem;
+      color: #5e48d9;
+      margin-bottom: 12px;
+    }
+
+    .pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #4ade80;
+      box-shadow: 0 0 10px rgba(74, 222, 128, 0.9);
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 4vw, 2.9rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      margin-bottom: 10px;
+    }
+
+    .hero-title span {
+      background: linear-gradient(120deg, #7b61ff, #ff9ac1);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1.02rem;
+      color: var(--text-muted);
+      max-width: 34rem;
+      margin-bottom: 18px;
+    }
+
+    .hero-tagline {
+      font-size: 0.95rem;
+      color: #43376d;
+      font-style: italic;
+      margin-bottom: 22px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+      border-radius: 999px;
+      padding: 9px 18px;
+      font-size: 0.92rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.16s ease, box-shadow 0.16s ease,
+        background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #7b61ff, #ff9ac1);
+      border-color: rgba(255, 255, 255, 0.16);
+      color: #fff;
+      box-shadow: 0 18px 40px rgba(252, 136, 183, 0.4);
+      font-weight: 500;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 24px 50px rgba(252, 136, 183, 0.6);
+    }
+
+    .btn-ghost {
+      background: #ffffff;
+      border-color: rgba(181, 171, 226, 0.9);
+      color: var(--text-muted);
+    }
+
+    .btn-ghost:hover {
+      background: #f6f2ff;
+      border-color: var(--accent);
+      color: var(--text-main);
+      transform: translateY(-1px);
+      box-shadow: 0 10px 26px rgba(71, 47, 152, 0.18);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .hero-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .hero-meta-label {
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.7rem;
+      color: #a59bc6;
+    }
+
+    .hero-meta-value {
+      font-weight: 500;
+    }
+
+    .hero-card {
+      background: linear-gradient(145deg, #ffffff, #f7f3ff);
+      border-radius: var(--radius-xl);
+      padding: 18px 18px 16px;
+      border: 1px solid rgba(224, 215, 255, 0.9);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .hero-card-gradient {
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 0 0, rgba(255, 190, 152, 0.35), transparent 55%),
+        radial-gradient(circle at 100% 0, rgba(123, 97, 255, 0.26), transparent 55%);
+      opacity: 0.9;
+      pointer-events: none;
+      mix-blend-mode: screen;
+    }
+
+    .hero-card-inner {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 1;
+    }
+
+    .hero-label-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .hero-label-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #4ade80;
+      box-shadow: 0 0 10px rgba(74, 222, 128, 0.8);
+      margin-right: 4px;
+    }
+
+    .hero-name {
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: #2e2558;
+    }
+
+    .hero-role {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .hero-stat {
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(248, 244, 255, 0.9);
+      border: 1px solid rgba(212, 200, 255, 0.9);
+      font-size: 0.78rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-stat strong {
+      font-size: 0.92rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      font-size: 0.72rem;
+      margin-bottom: 8px;
+    }
+
+    .hero-tag {
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: rgba(245, 241, 255, 0.95);
+      border: 1px solid rgba(218, 206, 255, 0.9);
+      color: #53457f;
+    }
+
+    .hero-location {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .hero-location span {
+      font-size: 0.9rem;
+    }
+
+    /* SECTIONS */
+    .section-title {
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #2b234f;
+    }
+
+    .section-subtitle {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+
+    .grid-two {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 26px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 18px 18px 16px;
+      box-shadow: 0 12px 26px rgba(52, 36, 122, 0.08);
+    }
+
+    .card + .card {
+      margin-top: 14px;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 6px;
+      color: #2e2558;
+    }
+
+    .card-tagline {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .list {
+      list-style: none;
+      font-size: 0.88rem;
+      color: #3a315f;
+    }
+
+    .list li {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .list li::before {
+      content: "•";
+      color: var(--accent);
+      margin-top: 1px;
+      font-size: 0.8rem;
+    }
+
+    .muted {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* PROJECT TABLE */
+    .table-wrapper {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      overflow: hidden;
+      background: #ffffff;
+      box-shadow: 0 12px 32px rgba(52, 36, 122, 0.1);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+    }
+
+    thead {
+      background: linear-gradient(135deg, #f4efff, #ffe9e9);
+    }
+
+    th,
+    td {
+      padding: 10px 12px;
+      text-align: left;
+      border-bottom: 1px solid rgba(224, 215, 255, 0.9);
+    }
+
+    th {
+      font-weight: 500;
+      color: #34255f;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #f9f7ff;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 8px;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      border: 1px solid rgba(181, 171, 226, 0.9);
+      background: #f6f2ff;
+      color: #4b3a8c;
+    }
+
+    .badge-live {
+      border-color: rgba(123, 97, 255, 0.7);
+      background: rgba(123, 97, 255, 0.1);
+      color: var(--accent);
+    }
+
+    .badge-danger {
+      border-color: rgba(255, 75, 129, 0.7);
+      background: rgba(255, 204, 221, 0.4);
+      color: #c0225e;
+    }
+
+    /* HIGHLIGHTS */
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 14px;
+    }
+
+    .highlight-card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 12px 13px 11px;
+      font-size: 0.86rem;
+      box-shadow: 0 10px 25px rgba(52, 36, 122, 0.08);
+    }
+
+    .highlight-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #a198c7;
+      margin-bottom: 4px;
+    }
+
+    .highlight-main {
+      font-weight: 500;
+      margin-bottom: 3px;
+      color: #32285e;
+    }
+
+    .highlight-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 26px;
+    }
+
+    .contact-list {
+      list-style: none;
+      font-size: 0.9rem;
+    }
+
+    .contact-list li {
+      margin-bottom: 8px;
+    }
+
+    .contact-label {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #a198c7;
+      margin-bottom: 3px;
+    }
+
+    .contact-link {
+      font-size: 0.92rem;
+      color: var(--accent);
+      word-break: break-all;
+    }
+
+    .social-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .chip {
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      padding: 6px 10px;
+      font-size: 0.82rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: #ffffff;
+      color: #4a3b86;
+    }
+
+    .chip span {
+      font-size: 0.9rem;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid rgba(224, 215, 255, 0.9);
+      padding: 16px 18px 20px;
+      font-size: 0.78rem;
+      color: #8a82af;
+      margin-top: auto;
+      background: #fdfbff;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .footer-tagline {
+      font-style: italic;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 880px) {
+      .hero,
+      .grid-two,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        margin-top: 10px;
+      }
+
+      .hero-card {
+        order: -1;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding-inline: 14px;
+      }
+
+      header {
+        border-bottom-width: 0;
+      }
+
+      .hero-title {
+        font-size: 2rem;
+      }
+
+      section {
+        margin-bottom: 52px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="nav">
+        <div class="logo">
+          <div class="logo-mark">IH</div>
+          <span>Injamamul&nbsp;Haque</span>
+        </div>
+        <nav class="nav-links">
+          <a href="#about">About</a>
+          <a href="#work">Work</a>
+          <a href="#projects">Projects</a>
+          <a href="#highlights">Highlights</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <button class="nav-cta" onclick="scrollToSection('contact')">
+          <span>●</span> Let’s talk
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero" id="top">
+        <div>
+          <div class="pill">
+            <div class="pill-dot"></div>
+            Available for collaborations &amp; media projects
+          </div>
+          <h1 class="hero-title">
+            Tech, truth &amp; <span>untold stories</span>.
+          </h1>
+          <p class="hero-subtitle">
+            I’m Injamamul Haque – a tech enthusiast, independent journalist, and
+            content creator from Barpeta, Assam. I explore how technology,
+            media, and identity shape the world around us.
+          </p>
+          <p class="hero-tagline">
+            "Exploring technology, truth, and untold stories — one idea at a
+            time."
+          </p>
+
+          <div class="hero-actions">
+            <a href="#work" class="btn-primary">
+              View my work →
+            </a>
+            <a href="#projects" class="btn-ghost">
+              Browse projects
+            </a>
+          </div>
+
+          <div class="hero-meta">
+            <div class="hero-meta-item">
+              <span class="hero-meta-label">Role</span>
+              <span class="hero-meta-value">
+                Student • Independent Journalist • Creator
+              </span>
+            </div>
+            <div class="hero-meta-item">
+              <span class="hero-meta-label">Based in</span>
+              <span class="hero-meta-value">Barpeta, Assam, India</span>
+            </div>
+            <div class="hero-meta-item">
+              <span class="hero-meta-label">Platforms</span>
+              <span class="hero-meta-value">@injamamul.hqe • @InjamamulHqe</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <div class="hero-card-gradient"></div>
+          <div class="hero-card-inner">
+            <div class="hero-label-row">
+              <span>
+                <span class="hero-label-dot"></span>
+                Live profile snapshot
+              </span>
+              <span style="font-size: 0.7rem; color: #9fa3c2;">
+                Updated 2025
+              </span>
+            </div>
+            <div>
+              <div class="hero-name">Injamamul Haque</div>
+              <div class="hero-role">
+                BSc student at BBK College • Independent digital journalist
+              </div>
+            </div>
+
+            <div class="hero-stats">
+              <div class="hero-stat">
+                <strong>50M+</strong> monthly views
+              </div>
+              <div class="hero-stat">
+                <strong>RedLeaf Report</strong> audience
+              </div>
+              <div class="hero-stat">
+                <strong>Assam</strong> focused storytelling
+              </div>
+            </div>
+
+            <div class="hero-tags">
+              <span class="hero-tag">Tech news &amp; explainers</span>
+              <span class="hero-tag">Independent journalism</span>
+              <span class="hero-tag">Social issues</span>
+              <span class="hero-tag">Fact-checking</span>
+              <span class="hero-tag">Assam &amp; identity</span>
+            </div>
+
+            <div class="hero-location">
+              <span>📍</span>
+              <span>Barpeta, Assam • Speaking for the unheard</span>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about">
+        <h2 class="section-title">About me</h2>
+        <p class="section-subtitle">
+          A student, tech enthusiast and independent journalist building
+          stories, platforms, and possibilities from Assam.
+        </p>
+
+        <div class="grid-two">
+          <div class="card">
+            <h3 class="card-title">Who I am</h3>
+            <p class="muted" style="margin-bottom: 10px;">
+              I’m a BSc student at
+              <strong>BBK College</strong> in Nagaon, Barpeta, Assam. I grew up
+              curious about how technology, media, and narrative power shape
+              society. Over time, that curiosity turned into content creation
+              and independent journalism.
+            </p>
+            <p class="muted" style="margin-bottom: 10px;">
+              I care deeply about how people and communities are portrayed in
+              public conversations. A big part of my work is questioning
+              stereotypes and telling stories with more context, nuance, and
+              humanity.
+            </p>
+            <p class="muted">
+              I create content in Assamese and English, blending tech awareness,
+              social stories, and youth-focused perspectives. Every project is a
+              small step towards better information, more context, and more
+              empathy.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 class="card-title">What drives me</h3>
+            <p class="card-tagline">
+              A mix of curiosity, responsibility, and creativity.
+            </p>
+            <ul class="list">
+              <li>Using tech and media to highlight social issues.</li>
+              <li>Building independent spaces outside mainstream gatekeeping.</li>
+              <li>Making complex topics accessible for students and youth.</li>
+              <li>Documenting identity, injustice, and hope in Assam.</li>
+              <li>Creating opportunities for others through internships and collaboration.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- WORK -->
+      <section id="work">
+        <h2 class="section-title">What I do</h2>
+        <p class="section-subtitle">
+          From digital journalism to retro-tech blogging experiments – here’s
+          how I’m currently building and learning.
+        </p>
+
+        <div class="grid-two">
+          <div>
+            <div class="card">
+              <h3 class="card-title">Independent journalism – RedLeaf Report</h3>
+              <p class="card-tagline">
+                Stories that matter, even when they’re uncomfortable.
+              </p>
+              <p class="muted" style="margin-bottom: 10px;">
+                <strong>RedLeaf Report</strong> is my independent journalism
+                project focused on:
+              </p>
+              <ul class="list">
+                <li>Social justice, education, and public accountability.</li>
+                <li>Ground-level issues mainstream media often ignores.</li>
+                <li>Fact-checked, contextual reels and explainers.</li>
+                <li>Youth-centered perspectives on policy and society.</li>
+              </ul>
+              <p class="muted" style="margin-top: 8px;">
+                Today, RedLeaf Report content averages
+                <strong>more than 50M+ views every month</strong>, showing that
+                honest storytelling still cuts through the noise.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3 class="card-title">Media projects &amp; future ideas</h3>
+              <p class="muted">
+                I’m continuously experimenting with:
+              </p>
+              <ul class="list" style="margin-top: 6px;">
+                <li>
+                  <strong>Documentary work</strong> – especially around identity,
+                  representation, and everyday life in Assam.
+                </li>
+                <li>
+                  <strong>Spotly</strong> – a youth-focused news concept designed
+                  for clarity and credibility.
+                </li>
+                <li>
+                  <strong>CAT MUSIC / Beat Point</strong> – a creative outlet for
+                  music and branding, even if it’s not my main priority.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <div class="card">
+              <h3 class="card-title">Tech &amp; content</h3>
+              <p class="card-tagline">
+                Making tech and media easier to understand.
+              </p>
+              <ul class="list">
+                <li>Short tech news breakdowns on Instagram and X (Twitter).</li>
+                <li>Coverage of how digital platforms impact education and youth.</li>
+                <li>Experiments with bilingual content for wider accessibility.</li>
+                <li>
+                  Early work on <strong>16bit.in</strong> – a retro-modern
+                  tech blog with 16-bit inspired visuals.
+                </li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <h3 class="card-title">Community building &amp; internships</h3>
+              <p class="muted">
+                I offer structured opportunities for students to join as:
+              </p>
+              <ul class="list" style="margin-top: 6px;">
+                <li>Fact-checkers and researchers.</li>
+                <li>Content writers and script assistants.</li>
+                <li>Social media support volunteers.</li>
+              </ul>
+              <p class="muted" style="margin-top: 8px;">
+                They get a clear role, guidance, and an
+                <strong>experience certificate</strong> after successfully
+                completing their term – without needing any complicated
+                processes or registrations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <p class="section-subtitle">
+          A quick snapshot of the platforms, experiments, and ideas I’m building
+          – from journalism to tech and storytelling.
+        </p>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Project</th>
+                <th>What it is</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>RedLeaf Report</strong></td>
+                <td>Independent journalism page focused on social issues, education, and public interest stories.</td>
+                <td><span class="badge badge-live">Active</span></td>
+              </tr>
+              <tr>
+                <td><strong>16bit.in</strong></td>
+                <td>Retro-modern tech blogging website with 16-bit inspired aesthetics and digital culture coverage.</td>
+                <td><span class="badge">Under development</span></td>
+              </tr>
+              <tr>
+                <td><strong>Spotly</strong></td>
+                <td>Youth-oriented digital news brand idea focusing on clarity, context, and credibility.</td>
+                <td><span class="badge">Concept stage</span></td>
+              </tr>
+              <tr>
+                <td><strong>Documentary: identity in Assam</strong></td>
+                <td>Long-term research and storytelling project on stereotyping, marginalisation, and resilience.</td>
+                <td><span class="badge">Planned</span></td>
+              </tr>
+              <tr>
+                <td><strong>CAT MUSIC / Beat Point</strong></td>
+                <td>Creative identity for music, sound, and brand experiments – not the main focus, but part of the journey.</td>
+                <td><span class="badge badge-danger">Experimental</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- HIGHLIGHTS -->
+      <section id="highlights">
+        <h2 class="section-title">Highlights &amp; milestones</h2>
+        <p class="section-subtitle">
+          Some key moments and themes that define the work I’m doing right now.
+        </p>
+
+        <div class="highlights-grid">
+          <div class="highlight-card">
+            <div class="highlight-label">Reach</div>
+            <div class="highlight-main">50M+ average monthly views</div>
+            <div class="highlight-note">
+              A growing audience across platforms through RedLeaf Report and
+              other projects.
+            </div>
+          </div>
+
+          <div class="highlight-card">
+            <div class="highlight-label">Focus</div>
+            <div class="highlight-main">Assam, identity &amp; youth</div>
+            <div class="highlight-note">
+              Centering narratives from communities who are usually pushed to
+              the margins.
+            </div>
+          </div>
+
+          <div class="highlight-card">
+            <div class="highlight-label">Approach</div>
+            <div class="highlight-main">Fact-first storytelling</div>
+            <div class="highlight-note">
+              Verifying claims, adding context, and avoiding sensationalism.
+            </div>
+          </div>
+
+          <div class="highlight-card">
+            <div class="highlight-label">Community</div>
+            <div class="highlight-main">Internships &amp; collaboration</div>
+            <div class="highlight-note">
+              Creating space for students to learn research, content writing,
+              and media literacy.
+            </div>
+          </div>
+
+          <div class="highlight-card">
+            <div class="highlight-label">Mediums</div>
+            <div class="highlight-main">Reels, posts, future docs</div>
+            <div class="highlight-note">
+              Short-form content now, with an eye on documentary and long-form
+              storytelling.
+            </div>
+          </div>
+
+          <div class="highlight-card">
+            <div class="highlight-label">Vision</div>
+            <div class="highlight-main">Independent, responsible media</div>
+            <div class="highlight-note">
+              Building platforms that are not controlled by political or
+              corporate interests.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact">
+        <h2 class="section-title">Let’s build something meaningful</h2>
+        <p class="section-subtitle">
+          For collaborations, journalism projects, research support, student
+          opportunities, or tech/media content – feel free to reach out.
+        </p>
+
+        <div class="contact-grid">
+          <div class="card">
+            <h3 class="card-title">Contact</h3>
+            <p class="muted" style="margin-bottom: 10px;">
+              I’m open to:
+            </p>
+            <ul class="list">
+              <li>Independent journalism collaborations and ground reports.</li>
+              <li>Educational &amp; social impact campaigns.</li>
+              <li>Guest sessions, digital awareness workshops, or youth panels.</li>
+              <li>Student internships in research, writing, and content.</li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="card" style="margin-bottom: 14px;">
+              <ul class="contact-list">
+                <li>
+                  <div class="contact-label">Email</div>
+                  <a href="mailto:youremail@example.com" class="contact-link">
+                    haqueinjamamul241@gmail.com
+                  </a>
+                </li>
+                <li>
+                  <div class="contact-label">Instagram</div>
+                  <a
+                    href="https://instagram.com/injamamul.hqe"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="contact-link"
+                  >
+                    @injamamul.hqe
+                  </a>
+                </li>
+                <li>
+                  <div class="contact-label">X (Twitter)</div>
+                  <a
+                    href="https://x.com/InjamamulHqe"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="contact-link"
+                  >
+                    @InjamamulHqe
+                  </a>
+                </li>
+              </ul>
+
+              <div class="social-row">
+                <div class="chip">
+                  <span>📰</span> Independent journalism
+                </div>
+                <div class="chip">
+                  <span>💻</span> Tech content
+                </div>
+                <div class="chip">
+                  <span>🎥</span> Documentary
+                </div>
+                <div class="chip">
+                  <span>🤝</span> Student collaborations
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <p class="muted">
+                “Voices matter. Stories matter. Truth matters.”  
+                If that resonates with you, we’re already on the same side.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div>© 2025 · Injamamul Haque</div>
+        <div class="footer-tagline">
+          Voices matter. Stories matter. Truth matters.
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    function scrollToSection(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      window.scrollTo({
+        top: el.offsetTop - 72,
+        behavior: "smooth",
+      });
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+      link.addEventListener("click", function (e) {
+        const targetId = this.getAttribute("href").substring(1);
+        const target = document.getElementById(targetId);
+        if (target) {
+          e.preventDefault();
+          window.scrollTo({
+            top: target.offsetTop - 72,
+            behavior: "smooth",
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
